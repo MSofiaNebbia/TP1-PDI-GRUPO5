@@ -10,6 +10,7 @@
 ## Descripcion: 
 
 Problema 1: Ecualización local de histograma
+
 Problema 2: Corrección de multiple choice
 
 ## Requisitos:
