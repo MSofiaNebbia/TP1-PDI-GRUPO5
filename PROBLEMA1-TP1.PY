@@ -40,9 +40,31 @@ def ecualizacion_local_histograma(imagen, M, N):
 
     return imagen_resultado
 
-imagen = cv2.imread('Imagen_con_detalles_escondidos.tif', cv2.IMREAD_GRAYSCALE)
+imagen = cv2.imread("Imagen_con_detalles_escondidos.tif", cv2.IMREAD_GRAYSCALE)
 
 resultado_3x3 = ecualizacion_local_histograma(imagen, 3, 3)
-plt.figure()
-plt.imshow(resultado_3x3, cmap='gray')
+plt.figure(), plt.imshow(resultado_3x3, cmap="gray"), plt.title("Ecualizacion local 3 x 3"), plt.show(block=False)
+
+resultado_9x9=ecualizacion_local_histograma(imagen,9,9)
+plt.figure(), plt.imshow(resultado_9x9, cmap="gray"),plt.title("Ecualizacion local 9 x 9"), plt.show(block=False)
+
+resultado_25x25 = ecualizacion_local_histograma (imagen, 25, 25)
+plt.figure(), plt.imshow(resultado_25x25, cmap="gray"),plt.title("Ecualizacion local 25 x 25"), plt.show(block=False)
+
+plt.figure(figsize=(10,5))
+plt.subplot(2,2,1)
+plt.title("Imagen original")
+plt.imshow(imagen, cmap="gray")
+
+plt.subplot(2,2,2)
+plt.title("Ecualización local - 3x3")
+plt.imshow(resultado_3x3, cmap="gray")
+
+plt.subplot(2,2,3)
+plt.title("Ecualización local - 9x9")
+plt.imshow(resultado_9x9, cmap="gray")
+
+plt.subplot(2,2,4)
+plt.title("Ecualización local - 25x25")
+plt.imshow(resultado_25x25, cmap="gray")
 plt.show()
